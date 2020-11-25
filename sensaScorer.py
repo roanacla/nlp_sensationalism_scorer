@@ -25,7 +25,7 @@ from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 class SensaScorer():
   def __init__(self):
     # self.sensa_dict = {1:'Barely sensationalist',0: 'Not sensationalist',2:'Sensationalist'}
-    self.sensa_dict = {1:0.5,0:0.0,2:0.85}
+    self.sensa_dict = {1:0.55,0:0.25,2:0.95}
     self.label_dict = {'Barely sensationalist': 1, 'Not sensationalist': 0, 'Sensationalist': 2}
     self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     self.model = BertForSequenceClassification.from_pretrained("bert-base-uncased",
